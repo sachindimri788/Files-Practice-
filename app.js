@@ -19,10 +19,16 @@
 // }
 
 
-var list=document.getElementsByTagName("li");
+// var list=document.getElementsByTagName("li");
 
-list[2].style.backgroundColor="green";
+// list[2].style.backgroundColor="green";
+
+// for(var i=0;i<list.length;i++){
+//     list[i].style.fontWeight="bold";
+// }
+
+
+var list=document.querySelectorAll("li:nth-child(odd)");
 
 for(var i=0;i<list.length;i++){
-    list[i].style.fontWeight="bold";
-}
+    list[i].style.backgroundColor="green"; }
