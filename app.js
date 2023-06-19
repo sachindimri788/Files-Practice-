@@ -41,3 +41,14 @@ headerTitle.innerHTML = 'Hello ' + headerTitle.innerHTML;
 // Add "Hello" before "Item 1"
 var item1 = document.querySelector('#items li:first-child');
 item1.innerHTML = 'Hello ' + item1.innerHTML;
+
+//delete button
+var deleteButton = document.getElementById('delete');
+  var itemsList = document.getElementById('items');
+  
+  deleteButton.addEventListener('click', function() {
+    var lastItem = itemsList.lastElementChild;
+    if (lastItem) {
+      itemsList.removeChild(lastItem);
+    }
+  });
