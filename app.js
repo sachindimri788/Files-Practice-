@@ -1,4 +1,3 @@
-
  const header=document.getElementById('main-header');
  const addItem=document.getElementsByClassName('title');
 
@@ -52,3 +51,25 @@ var deleteButton = document.getElementById('delete');
       itemsList.removeChild(lastItem);
     }
   });
+
+
+  ////////    filter   /////////////////
+var filter=document.getElementById('filter');
+
+filter.addEventListener('keyup',filterItems);
+
+function filterItems(e){
+  var text=e.target.value.toLowerCase();
+  var items=itemsList.getElementsByTagName('li');
+ //convert to arrray 
+  Array.from(items).forEach(function(item){
+    var itemName=item.firstChild.textContent;
+
+    if(itemName.toLowerCase().indexOf(text)!=-1){
+      item.style.display='block';
+    }
+    else{
+      item.style.display='none';
+    }
+  })
+}
